@@ -12,32 +12,31 @@ using namespace std;
 struct ListNode {
     int val;
     ListNode *next;
-    ListNode(int x): val(x), next(NULL) {};
+    ListNode(int x): val(x), next(NULL){}
 };
 
-class Solution{
+class Solution {
 public:
-    ListNode* middle(ListNode* head){
+    ListNode* middleNode(ListNode* head) {
         int length = 0;
-        int count = 0;
-        ListNode* dummyNode = head;
-        while (dummyNode != NULL) {
-            dummyNode = dummyNode->next;
+        int cnt = 0;
+        ListNode* cur = head;
+        while (cur) {
+            cur = cur->next;
             length++;
         }
-        if (length == 1) {
-            return head;
-        }
-        
-        while (head != NULL && count != length/2) {
+    
+        while (head != NULL) {
+            cnt++;
+            if (cnt == length/2) {
+                return head->next;
+            }
             head = head->next;
-            count++;
-            
-            return head->next;
         }
         return NULL;
     }
 };
+
 
 int main() {
     string line;
