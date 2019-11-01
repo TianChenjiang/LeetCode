@@ -9,7 +9,6 @@ using namespace std;
 class Solution {
 public:
     vector<string> letterCasePermutation(string S) { //"a1b2"
-        if (S.empty())
 
     }
 };
