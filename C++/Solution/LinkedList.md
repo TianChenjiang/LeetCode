@@ -20,3 +20,50 @@ ListNode* head = new ListNode(1); //初始化后的类型为ListNode::ListNode �
 
 
 ### 获得Linkedlist长度
+
+
+```java
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int x) {
+        val = x;
+    }
+}
+```
+
+注意事项：
+
+当链表为空时，不能使用`l1.val`或者`l1.next` 所以当遍历时，需要每步都进行判断
+
+
+
+链表的初始化:
+
+```java
+ public static ListNode initial(int...vals) {
+        ListNode head = new ListNode(0);
+        ListNode current = head;
+        for(int val : vals){
+            current.next = new ListNode(val);
+            current = current.next;
+        }
+        return head.next;
+ }
+```
+
+链表转为字符串：
+
+```java
+public String toString(){
+        String s = "";
+        ListNode current = this;
+        while (current != null) {
+            s = s + " " + current.val;
+            current = current.next;
+        }
+        return s;
+}
+```
+
+
