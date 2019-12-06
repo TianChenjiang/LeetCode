@@ -20,7 +20,9 @@
         "istream": "cpp",
         "vector": "cpp",
         "__locale": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp"
     },
     "code-runner.runInTerminal": true,
 }
