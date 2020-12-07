@@ -22,7 +22,9 @@
         "__locale": "cpp",
         "iosfwd": "cpp",
         "chrono": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
     },
     "code-runner.runInTerminal": true,
 }
