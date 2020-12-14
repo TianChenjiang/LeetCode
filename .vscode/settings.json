@@ -24,7 +24,8 @@
         "chrono": "cpp",
         "limits": "cpp",
         "queue": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "random": "cpp"
     },
     "code-runner.runInTerminal": true,
 }
