@@ -1,3 +1,15 @@
+### string
+
+String -> int  `stoi(str)`
+
+int -> string   `to_string(number)`
+
+Char -> string  `string(1, 'a')`;
+
+###  
+
+
+
 ### Vector
 
 #### 清空
