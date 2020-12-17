@@ -6,6 +6,17 @@ int -> string   `to_string(number)`
 
 Char -> string  `string(1, 'a')`;
 
+#### split
+
+```c++
+string str = "a b c"
+istringstream in(str);
+string word = "";
+while (in >> word); 或者 for (string word; in >> word)
+```
+
+
+
 ###  
 
 
