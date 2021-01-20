@@ -28,6 +28,21 @@ cout << vec.size();    // 0
 cout << vec.capacity(); // 3
 ```
 
+#### 排序
+
+```c++
+sort(v.begin(), v.end()); //顺序
+sort(v.begin(), v.end(), greater<int>()); //逆序
+//自定义
+struct Point {
+  int x, y;
+};
+bool comparePoint(Point a, Point b) {
+  return (a.x < b.x);
+}
+sort(v.begin(), v.end(), comparePoint);
+```
+
 
 
 ### unordered_map
