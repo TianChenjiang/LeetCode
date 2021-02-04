@@ -43,7 +43,7 @@ bool comparePoint(Point a, Point b) {
 sort(v.begin(), v.end(), comparePoint);
 ```
 
-
+注意用accumulate的时候，v.begin. v.begin()+2，是前闭后开的
 
 ### unordered_map
 
