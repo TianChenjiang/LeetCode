@@ -49,7 +49,18 @@ sort(v.begin(), v.end(), comparePoint);
 
 ```c++
 s[m] != 0; // 判断是否已经有元素，这里最好不要直接用，因如果second存储的是索引的话，可能存储的是0，但表示有元素，易错！
-count(key) // 判断是否有key存在，也可以用find(key) != m.end()
+count(key); // 判断是否有key存在，也可以用find(key) != m.end()
+```
+
+ 求最大值：
+
+```c++
+unordered_map<char, int> m;
+char chr = max_element(m.begin(), m.end(), cmp)->first; //这里如果不写cmp的话，好像默认是用key来排序
+
+bool cmp(pair<char,int> p1, pair<char,int> p2) {
+  return p1.second > p2.second;
+}
 ```
 
 
