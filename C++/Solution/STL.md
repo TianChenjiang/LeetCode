@@ -1,4 +1,4 @@
-### [9s9tring
+### string
 
 String -> int  `stoi(str)`
 
@@ -112,9 +112,22 @@ struct cmp2{
 };
 ```
 
-push 插入元素到队尾
+push 插入元素到**队尾**
 
-top pop 访问和弹出队头元素
+top pop 访问和弹出**队头**元素
+
+找第k大的元素，可以维护一个K大小的小根堆，堆顶（队头）也就是第K大
+
+```c++
+for (int num : nums) {
+  q.push(num);
+  if (q.size() > K) {
+    q.pop();
+  }
+}
+```
+
+
 
 
 
@@ -123,6 +136,17 @@ top pop 访问和弹出队头元素
 这个是允许重复元素的set，一种基于红黑树的数据结构，可以自动对元素进行排序（默认升序），又允许有重复值
 
 `erase`如果删除元素，是默认把所有等于该元素的值删除掉；可以通过find找到确定的iterator再删除
+
+// 和小根堆效果一样
+
+```c++
+for (int num : nums) {
+  st.insert(num);
+  if (st.size() > k) st.erase(st.begin());
+}
+```
+
+
 
 
 
