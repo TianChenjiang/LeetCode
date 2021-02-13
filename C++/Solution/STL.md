@@ -45,6 +45,20 @@ sort(v.begin(), v.end(), comparePoint);
 
 注意用accumulate的时候，v.begin. v.begin()+2，是前闭后开的
 
+#### 删除
+
+```c++
+for (auto it = vec.begin(); it != vec.end();) {
+  if (*it == value) {
+    it = vec.erase(it); //erase后，迭代器会指向下一个元素
+  } else it++;
+}
+```
+
+
+
+
+
 ### unordered_map
 
 ```c++
