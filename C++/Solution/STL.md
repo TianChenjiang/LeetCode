@@ -15,6 +15,18 @@ string word = "";
 while (in >> word); 或者 for (string word; in >> word)
 ```
 
+#### 字符串作栈
+
+```c++
+string str;
+//取栈顶元素
+str.back();
+//弹出栈顶元素
+str.pop_back();
+//插入元素
+str.push_back();
+```
+
 
 
 ### Vector
