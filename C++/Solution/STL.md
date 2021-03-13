@@ -31,13 +31,25 @@ str.push_back();
 
 ### Vector
 
-### 复制
+#### 一维数组初始化
+
+```c++
+vector<int> vec(100, -1);
+vector<int> vec2(vec);
+```
+
+#### 二维数组初始化
+
+```c++
+vector<vector<int>> vec;
+vec.resize(100, vector<int>(100, 0));
+```
+
+#### 复制
 
 ```c++
 vector<int> vec2(vec1);
 ```
-
-
 
 #### 清空
 
@@ -195,7 +207,12 @@ for (int num : nums) {
 
 
 
+### list
 
+链表
+
+- `push_back()`
+- `erase`
 
 
 
