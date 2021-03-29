@@ -122,6 +122,12 @@ bool cmp(pair<char,int> p1, pair<char,int> p2) {
 }
 ```
 
+清除元素：
+
+```c++
+st.erase(num);
+```
+
 
 
 ### unordered_set
@@ -129,7 +135,7 @@ bool cmp(pair<char,int> p1, pair<char,int> p2) {
 ```c++
 unordered_set<int> s = {1, 2, 3};
 s.find(x) != s.end(); //查找元素,返回迭代器，如果不等于end()，表示能找到这个元素
-s.insert()
+s.insert(num)
 
 ```
 
