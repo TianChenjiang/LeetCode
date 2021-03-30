@@ -12,10 +12,13 @@ Char -> string  `string(1, 'a')`;
 string str = "a b c"
 istringstream in(str);
 string word = "";
-while (in >> word); 或者 for (string word; in >> word)
+while (in >> word); 或者 for (string word; in >> word) 
+或者 
+string t = "";
+while(getline(in, t, ',')) v.push_back(t)
 ```
 
-#### 字符串作栈
+#### 字符串的类栈函数
 
 ```c++
 string str;
@@ -30,6 +33,8 @@ str.push_back();
 
 
 ### Vector
+
+`push_back()`是深度拷贝 
 
 #### 一维数组初始化
 
