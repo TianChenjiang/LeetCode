@@ -13,9 +13,10 @@ string str = "a b c"
 istringstream in(str);
 string word = "";
 while (in >> word); 或者 for (string word; in >> word) 
-或者 
+或者   
 string t = "";
 while(getline(in, t, ',')) v.push_back(t)
+ps: 两种方法有个区别，对于"a "来说，第一种方法会把末尾的空格略去，第二种方法会保留【LeetCode58】
 ```
 
 #### 字符串的类栈函数
