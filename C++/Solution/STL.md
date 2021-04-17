@@ -134,6 +134,21 @@ bool cmp(pair<char,int> p1, pair<char,int> p2) {
 st.erase(num);
 ```
 
+`lower_bound`  返回一个迭代器，指向 >= key的第一个元素
+
+ `upper_bound`返回一个迭代器，指向>key的第一个元素
+
+ps：这两个属于std::map::lower_bound
+
+用法：
+
+```c++
+map<int, int> m;
+map<int, int>::iterator it = m.lower_bound(3);
+```
+
+
+
 
 
 ### unordered_set
@@ -204,6 +219,12 @@ for (int num : nums) {
 
 ### multiset
 
+内部是平衡二叉树，插入元素会自动调整，保证root-val > root-left->val
+
+也保证根节点左右子树高度相等，这样二叉树高度最小，检索速度最快
+
+<img src="../../../../学习/笔记合集/img/image-20210417141023244.png" alt="image-20210417141023244" style="zoom:33%;" />
+
 这个是允许重复元素的set，一种基于红黑树的数据结构，可以自动对元素进行排序（默认升序），又允许有重复值
 
 `erase`如果删除元素，是默认把所有等于该元素的值删除掉；可以通过find找到确定的iterator再删除
@@ -239,6 +260,55 @@ it.rbegin() 指向最后一个元素
 it.rend() 指向第一个元素的前一个位置
 
 
+
+
+
+在递增序列中：
+
+lower_bound: 返回[first, last)中第一个>=val 的位置
+
+upper_bound: 返回[first, last)中第一个val的位置
+
+```c++
+int a[15];
+int lb = lower_bound(a, a + n + 1, 2) - a; //在[a,a+n+1)中找出大于等于2的位置，这个位置是从0开始
+int ub = upper_bound(a, a + n + 1, 2) - a; //在[a,a+n+1)中找出大于2的位置，这个位置是从0开始
+```
+
+
+
+
+
+内部有序的数据结构：
+
+下面三种都基于红黑树实现
+
+- set
+
+  - 也可以更改默认排序方式
+
+  - ```c++
+    // 从大到小排序的比较器函数对象
+    struct Compartor
+    {
+        bool operator()(const int lhs,const int rhs) const
+        {
+            return rhs < lhs;
+        }
+    };
+    // 声明使用自定义比较器的set
+    set<int,Compartor> s;
+    // 按照从小到大的顺序插入
+    for (int i = 0; i < 10; i++){
+        s.insert(i);
+    }
+    ```
+
+  - 
+
+- multiset
+
+- map
 
 
 
