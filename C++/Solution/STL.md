@@ -162,6 +162,18 @@ s.insert(num)
 
 
 
+
+
+### queue
+
+初始化
+
+```c++
+queue<TreeNode*> q({root});
+```
+
+
+
 ### priority_queue
 
 ```c++
