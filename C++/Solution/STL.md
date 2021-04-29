@@ -33,7 +33,34 @@ str.push_back();
 
 
 
-### Vector
+### array
+
+动态创建数组
+
+```c++
+int *p = new int[len];
+// int *p = new int[len](); 多加个括号表示初始化为0
+int **p = new int*[row];
+for (int i = 0; i < row; i++) {
+  p[i] = new int[col];
+}
+```
+
+释放
+
+```c++
+delete[] p;
+
+//二维
+for (int i = 0; i < row; i++) {
+  delete[] p[i];
+}
+delete[] p;
+```
+
+
+
+### vector
 
 `push_back()`是深度拷贝 
 
@@ -325,4 +352,14 @@ int ub = upper_bound(a, a + n + 1, 2) - a; //在[a,a+n+1)中找出大于2的位�
 
 
 
+
+### 智能指针
+
+https://docs.microsoft.com/en-us/cpp/cpp/how-to-create-and-use-unique-ptr-instances?view=msvc-160
+
+一个智能指针用来表示一个单例
+
+指针不能被复制，只能被move
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNly1gq0npc30fjj31720fewgs.jpg" alt="image-20210429154112439" style="zoom:33%;" />
 
