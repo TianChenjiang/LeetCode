@@ -144,7 +144,21 @@ s[m] != 0; // 判断是否已经有元素，这里最好不要直接用，因如
 count(key); // 判断是否有key存在，也可以用find(key) != m.end()
 ```
 
- 求最大值：
+ 遍历：
+
+```c++
+for (auto mm : m) {
+  cout << mm.first << mm.second << endl;
+}
+
+for (auto [num, freq] : m) {
+  cout << num << freq << endl;
+}
+```
+
+
+
+求最大值：
 
 ```c++
 unordered_map<char, int> m;
