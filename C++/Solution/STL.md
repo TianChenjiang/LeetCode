@@ -188,6 +188,14 @@ map<int, int> m;
 map<int, int>::iterator it = m.lower_bound(3);
 ```
 
+如果需要排序，可以用vector存储key，然后再对vector排序
+
+```c++
+sort(vec.begin(), vec.end(), [&] (string a, string b) -> bool {
+            return (m[a] == m[b]) ? a < b : m[a] > m[b];
+});
+```
+
 
 
 
