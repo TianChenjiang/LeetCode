@@ -200,7 +200,19 @@ sort(vec.begin(), vec.end(), [&] (string a, string b) -> bool {
 
 
 
+### set
+
+基于平衡树实现，key以一定的顺序排列
+
+```c++
+s.insert(num);
+```
+
+
+
 ### unordered_set
+
+基于hash table实现，可以以任何顺序排列，key被hash为indices，所以插入是随机的
 
 ```c++
 unordered_set<int> s = {1, 2, 3};
