@@ -218,7 +218,7 @@ s.insert(num);
 unordered_set<int> s = {1, 2, 3};
 s.find(x) != s.end(); //查找元素,返回迭代器，如果不等于end()，表示能找到这个元素
 s.insert(num)
-if (s.count(num))
+if (s.count(num)) //是否存在该元素
 ```
 
 
