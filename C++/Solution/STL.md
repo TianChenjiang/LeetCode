@@ -137,6 +137,52 @@ for (auto it = vec.begin(); it != vec.end();) {
 
 
 
+### map
+
+```c++
+//排序 如果针对value进行排序，需要把map的pair放入vector，然后再对vector排序
+map<char, int> m;
+vector<pair<char,int>> vec;
+for (auto [c, freq] : m) {
+  vec.push_back(make_pair(c, freq));
+}
+sort(vec.begin(), vec.end(), [&] (pair<char,int> p1, pair<char,int> p2)->bool {
+		return p1.second > p2.second});
+```
+
+补充：
+
+一般会用到的写法：
+
+```c++
+sort(people.begin(), people.end(), [](const vector<int>& u, const vector<int>& v) {
+   return u[0] < v[0] || (u[0] == v[0] && u[1] > v[1]);
+ });
+```
+
+
+
+lamda语法：`[] (A x, A y) -> bool {return x < y;}`
+
+`[ capture list ] ( parameter list) -> return type { function body; };`
+
+`[捕获列表]( 参数列表 ) -> 返回值类型{函数体}`
+
+注意：[]表示哪些参数需要传入，空的话表示不需要传入任何参数，常见的有&和=
+
+补充捕获列表：
+
+> - [] 不捕获任何变量。
+> - [&] 捕获外部作用域中所有变量，并作为引用在函数体中使用（按引用捕获）。
+> - [=] 捕获外部作用域中所有变量，并作为副本在函数体中使用（按值捕获）。
+> - [=，&foo] 按值捕获外部作用域中所有变量，并按引用捕获 foo 变量。
+> - [bar] 按值捕获 bar 变量，同时不捕获其他变量。
+> - [this] 捕获当前类中的 this 指针，让 lambda 表达式拥有和当前类成员函数同样的访问权限。如果已经使用了 & 或者 =，就默认添加此选项。捕获 this 的目的是可以在 lamda 中使用当前类的成员函数和成员变量。
+
+
+
+
+
 ### unordered_map
 
 ```c++
