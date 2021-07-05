@@ -248,6 +248,15 @@ sort(vec.begin(), vec.end(), [&] (string a, string b) -> bool {
 
 ### set
 
+以默认的顺序，可以简单修改正逆序
+
+```c++
+set<int, less<int>> st; //默认升序
+set<int, greater<int>> st;
+```
+
+提醒一下，如果对string形式的数字排序，直接用默认排序方法的话，“10” < "9"，因为是字典序比较，一位一位比
+
 基于平衡树实现，key以一定的顺序排列
 
 ```c++
