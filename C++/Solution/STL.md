@@ -139,6 +139,20 @@ for (auto it = vec.begin(); it != vec.end();) {
 
 ### map
 
+##### 对key排序：
+
+默认即为按照key递增排序
+
+修改默认为递减：
+
+```c++
+map<int, string, greater<int>> m;
+```
+
+
+
+##### 对value排序：
+
 ```c++
 //排序 如果针对value进行排序，需要把map的pair放入vector，然后再对vector排序
 map<char, int> m;
