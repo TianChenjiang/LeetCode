@@ -185,6 +185,14 @@ lamda语法：`[] (A x, A y) -> bool {return x < y;}`
 
 ### unordered_map
 
+初始化
+
+```c++
+unordered_map<int,int> m{{0,1}}; //注意外面是大括号，而vector，set这类外面是小括号
+```
+
+
+
 ```c++
 s[m] != 0; // 判断是否已经有元素，这里最好不要直接用，因如果second存储的是索引的话，可能存储的是0，但表示有元素，易错！
 count(key); // 判断是否有key存在，也可以用find(key) != m.end()
