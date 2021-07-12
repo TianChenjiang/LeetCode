@@ -415,19 +415,48 @@ it.rend() 指向第一个元素的前一个位置
 
 
 
-
+[lower_bound和upper_bound参考](https://www.geeksforgeeks.org/upper_bound-and-lower_bound-for-non-increasing-vector-in-c/)
 
 在递增序列中：
 
-lower_bound: 返回[first, last)中第一个>=val 的位置
+lower_bound: 返回[first, last)中**第一个**>=val 的位置，假如有多个相等的同时满足，返回第一个
 
-upper_bound: 返回[first, last)中第一个val的位置
+upper_bound: 返回[first, last)中第一个>val的位置
+
+如果没有找到，则返回end()
 
 ```c++
 int a[15];
-int lb = lower_bound(a, a + n + 1, 2) - a; //在[a,a+n+1)中找出大于等于2的位置，这个位置是从0开始
-int ub = upper_bound(a, a + n + 1, 2) - a; //在[a,a+n+1)中找出大于2的位置，这个位置是从0开始
+int lb = lower_bound(a, a + n + 1, 2) - a; //在[a,a+n+1)中找出大于等于2的索引值，这个位置是从0开始
+int ub = upper_bound(a, a + n + 1, 2) - a; //在[a,a+n+1)中找出大于2的索引值，这个位置是从0开始
+
+
+//或者可以这样用，采用静态函数m.lower_bound()
+map<int, string> m;
+auto it = m.lower_bound(value);
 ```
+
+
+
+如果在递增序列中寻找不大于value的最大值，可以先用upper_bound获得大于value的最小值，然后再取它的前一个元素即可，如果upper_bound已经是begin了或者没有找到满足条件的值，那么不存在这样的值
+
+```c++
+auto it = m.upper_bound(value);
+if (it != m.begin()) {
+  return prev(it)->second; //或者 return (it-1)->second;
+}
+return ""; 
+```
+
+
+
+在递减序列中：
+
+`lower_bound()` 第一个小于等于value的迭代器
+
+`upper_bound()` 第一个小于value的迭代器
+
+假如
 
 
 
