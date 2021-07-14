@@ -9,7 +9,10 @@ int main()
   
     // sorting vector in non increasing order. Vector
     // becomes {8, 7, 5, 5, 4, 3, 3, 3, 2, 1}
-    std::sort(v.begin(), v.end(), std::greater<int>());
+    sort(v.begin(), v.end());
+    // std::sort(v.begin(), v.end(), std::greater<int>());
+
+    std::cout << lower_bound(v.begin(), v.end(), 1) - v.begin();
   
     std::vector<int>::iterator low, up;
     low = std::lower_bound(v.begin(), v.end(), 3);         

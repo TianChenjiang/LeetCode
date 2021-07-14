@@ -426,7 +426,7 @@ lower_bound: 返回[first, last)中**第一个**>=val 的位置，假如有多�
 
 upper_bound: 返回[first, last)中第一个>val的位置
 
-如果没有找到，则返回end()
+如果大于所有vector的元素，则返回end()，如果小于所有元素，那肯定是返回vec.begin()
 
 ```c++
 int a[15];
