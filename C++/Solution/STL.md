@@ -367,6 +367,35 @@ for (int num : nums) {
 }
 ```
 
+【LeetCode 1337】
+
+```c++
+class Solution {
+public:
+    struct cmp {
+        bool operator()(pair<int, int>& p1, pair<int, int>& p2) {
+            if (p1.first == p2.first) return p1.second > p2.second;
+            return p1.first > p2.first;
+        }
+    };
+
+    vector<int> kWeakestRows(vector<vector<int>>& mat, int k) {
+        vector<int> res;
+        priority_queue<pair<int,int>, vector<pair<int,int>>, cmp> q;
+        for (int i = 0; i < mat.size(); i++) {
+            auto it = upper_bound(mat[i].begin(), mat[i].end(), 1, greater<int>());
+            int sum = it - mat[i].begin();
+            q.push(make_pair(sum, i));
+        }
+        while (res.size() < k) {
+            int t = q.top().second; q.pop();
+            res.push_back(t);
+        }
+        return res;
+    }
+};
+```
+
 
 
 
@@ -459,7 +488,11 @@ return "";
 
 `upper_bound()` 第一个小于value的迭代器
 
-假如
+```c++
+auto it = lower_bound(vec.begin(), vec.end(), greater<int>());
+```
+
+
 
 
 
