@@ -319,7 +319,7 @@ queue<TreeNode*> q({root});
 ### priority_queue
 
 ```c++
-priority_queue<int, vector<int>, less<int>> q; // 降序队列，从队头到队尾递减 大顶堆 默认是大顶堆
+priority_queue<int, vector<int>, less<int>> q; // 降序队列，从队头到队尾递减 大根堆 默认是大根堆（大顶堆）
 priority_queue<int, vector<int>, greater<int>> q; //升序队列 小顶堆
 
 //重载操作符 < 
@@ -339,14 +339,14 @@ struct cmp {
 //注意：正好是反着的，小顶堆是>,大顶堆是<
 //小顶堆
 struct cmp1{
-	    bool  operator ()  (int  a , int  b){
+	    bool operator () (int  a , int  b){
 	   	      return a > b;
 	   } 
 }; 
 
 //大顶堆
 struct cmp2{
-	   bool operator ()( int s , int d){
+	   bool operator ()(int s , int d){
 	   	   return s < d;
 	   }
 };
