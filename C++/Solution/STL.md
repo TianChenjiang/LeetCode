@@ -1,3 +1,7 @@
+### char
+
+转小写：`tolower(chr)`
+
 ### string
 
 String -> int  `stoi(str)`
