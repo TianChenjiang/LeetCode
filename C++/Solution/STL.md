@@ -10,7 +10,7 @@ int -> string   `to_string(number)`
 
 Char -> string  `string(1, 'a')`;
 
-#### split
+#### s plit
 
 ```c++
 string str = "a b c"
