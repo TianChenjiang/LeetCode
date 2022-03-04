@@ -10,7 +10,7 @@ int -> string   `to_string(number)`
 
 Char -> string  `string(1, 'a')`;
 
-#### s plit
+#### split
 
 ```c++
 string str = "a b c"
@@ -322,6 +322,13 @@ if (s.count(num)) //是否存在该元素
 queue<TreeNode*> q({root});
 ```
 
+插入删除：
+
+```c++
+int fro = q.front();
+q.pop();
+```
+
 
 
 ### priority_queue
@@ -403,6 +410,8 @@ public:
     }
 };
 ```
+
+ps：优先队列中的less是大根堆，与正常思路来说是反的，因为less一般表示a<b，也就是升序。
 
 
 
@@ -499,8 +508,6 @@ return "";
 ```c++
 auto it = lower_bound(vec.begin(), vec.end(), greater<int>());
 ```
-
-
 
 
 

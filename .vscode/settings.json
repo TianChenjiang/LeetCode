@@ -85,4 +85,9 @@
         "__functional_03": "cpp"
     },
     "code-runner.runInTerminal": true,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+      },
 }
